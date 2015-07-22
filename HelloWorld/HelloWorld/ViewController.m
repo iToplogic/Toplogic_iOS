@@ -30,6 +30,8 @@
     
     self.displayLabel.text = @"HelloWolrd";
     
+    NSLog(@"HelloWorld");
+    
     
     
 }
