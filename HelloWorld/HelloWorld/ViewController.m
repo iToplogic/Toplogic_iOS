@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <AFNetworking.h>
+
 
 @interface ViewController ()
 
@@ -33,7 +35,14 @@
     NSLog(@"HelloWorld");
     
     
-    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://samwize.com/api/poos/"
+      parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"JSON: %@", responseObject);
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             NSLog(@"Error: %@", error);
+         }];
 }
 
 
